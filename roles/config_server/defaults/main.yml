@@ -1,0 +1,3 @@
+---
+# defaults file for config_server
+new_host_timezone : UTC

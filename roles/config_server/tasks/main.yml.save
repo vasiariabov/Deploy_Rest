@@ -1,0 +1,22 @@
+---
+# tasks file for config_server
+ - name: Install the NTP daemon
+   apt: name=ntp
+
+ - name: Make sure ntp is started
+
+   service: name=ntp state=started enabled=yes
+
+ - name: Set the timezone to the {{new_host_timezone}} 
+   timezone: "name={{new_host_timezone}}"
+ 
+ - name: Update apt repo and cache 
+   apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
+
+ - name: Upgrade all packages on server
+   apt: upgrade=dist force_apt_get=yes
+
+ - ufw:
+     rule: allow
+     name: OpenSSH
+

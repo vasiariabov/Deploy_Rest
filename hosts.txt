@@ -1,0 +1,2 @@
+[test_vasia_server]
+linux ansible_host=ec2-3-21-37-151.us-east-2.compute.amazonaws.com

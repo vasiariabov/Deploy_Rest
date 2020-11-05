@@ -1,0 +1,8 @@
+---
+# handlers file for deploy_rest_api
+- name: nginx systemd
+  systemd:
+    name: nginx
+    enabled: yes
+    state: started
+

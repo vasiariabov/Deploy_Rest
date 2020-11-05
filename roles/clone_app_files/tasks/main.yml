@@ -1,0 +1,17 @@
+---
+# tasks file for clone_app_files
+
+ - name: clone repository
+   git: 
+     repo: https://github.com/vasiariabov/rest.git
+     version: rest_deploy
+     dest: /usr/repo
+   become: yes
+ 
+ - name: copy database.env
+   copy: src=database.env  dest={{ dest_file_1 }}
+
+ - name: copy .env
+   copy: src=.env dest={{ dest_file_2 }}
+
+

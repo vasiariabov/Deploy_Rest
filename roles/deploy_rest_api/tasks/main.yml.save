@@ -1,0 +1,22 @@
+---
+# tasks file for deploy_rest_api
+- name: Install Nginx Web server
+  apt:
+    name: nginx
+    state: latest
+  become: yes
+
+
+- name: install pip
+  shell: pip install psyopg2
+  args:
+    chdir: /usr/repo/
+  become: yes
+  
+
+- name: Run Rest-api
+  shell: docker-compose build 
+  args: 
+    chdir: /usr/repo/
+  become: yes  
+  

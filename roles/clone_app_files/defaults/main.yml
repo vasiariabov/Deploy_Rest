@@ -1,0 +1,6 @@
+---
+# defaults file for clone_app_files
+
+dest_file_1: /usr/repo/
+dest_file_2: /usr/repo/src
+ 
